@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ex</title>
+        <style>
+            html,body{
+                margin: 0%;
+                gap: 20px;
+                height: 100%; width: 100%;
+                padding: 0%;
+                display: flex; align-items: center; justify-content: center;
+                flex-direction: column;
+                background: conic-gradient(white, red, white,
+                blue,white,yellow,white);
+            }
+
+            div.body{
+                box-shadow: 0px 0px 10px 1px silver;
+                background-color: rgba(172, 255, 47, 0.501);
+                border-radius: 5px;
+                display: flex; align-items: center; justify-content: center;
+                flex-direction: column;
+                aspect-ratio: 1;
+                width: 200px;
+                padding: 5px;
+                gap: 4px;
+
+                div.row{
+                    display: flex; align-items: center; justify-content: center;
+                    width: 100%;
+                    gap: 4px;
+                    perspective: 10cm;
+                    span{
+                        perspective: 10cm;
+                        position: relative;
+                        border-radius: 2px;
+                        display: flex; align-items: center; justify-content: center;
+                        position: relative;
+                        background-color: rgb(134, 224, 0);
+                        color: aliceblue;
+                        font-size: 150%;
+                        transition-duration: 1s;
+                        aspect-ratio: 1;
+                        width: 40px;
+                        border: 1px solid black;
+                    }
+
+                    span:hover{
+                        scale: 1.05; 
+                        background-color: rgb(170, 255, 0);
+                    }
+
+                    span:active{
+                        scale: 0.95;
+                    }
+
+                }
+
+            }
+
+            div.body:hover{
+                box-shadow: 0px 0px 2px 2px silver;
+            }
+
+
+            div.info{
+                perspective: 10cm;
+                display: flex; align-items: center; justify-content: center;
+                flex-direction: column;
+                gap: 5px;
+            
+                h3{
+                    margin: 0%;
+                    color: rgb(0, 137, 91);
+                }
+            
+                div.card{
+                    transition-duration: 1s;
+                    transform-style: preserve-3d;
+            
+                    div{
+                        position: relative;
+                        width: 100px;
+                        aspect-ratio: 2;
+                        box-shadow: 0px 0px 10px silver;
+                        border-radius: 10px;
+                        display: flex; align-items: center; justify-content: center;
+                        flex-direction: column;
+                        backface-visibility: hidden;
+                        gap: 5px;
+            
+                        h5{
+                            margin: 0%; text-decoration: underline;
+                        }
+            
+                        h2{
+                            margin: 0%;
+                        }
+                    
+                    }
+                    
+                    div.MK{
+                        position: absolute;
+                        transform: rotateY(180deg);
+                    }
+                
+                }
+                
+                div.card:hover{
+                    transform: rotateY(180deg);
+                }
+            
+            }
+
+            button{
+                border: none;
+                padding: 4px 18px;
+                color: rgb(255, 1, 1);
+                font-size: large;
+                border-radius: 6px;
+                background-image: linear-gradient(to top left  , rgba(192, 192, 192, 0.505), rgba(255, 0, 0, 0.456), rgba(255, 166, 0, 0.478), rgba(255, 255, 0, 0.467), rgba(153, 205, 50, 0.478), rgba(192, 192, 192, 0.533));
+                box-shadow: 0px 0px 10px 1px silver;
+            }
+            button:hover{
+                scale: 1.05;
+                box-shadow: 0px 0px 20px 2px silver;
+            }
+            button:active{
+                scale: 0.95;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="info">
+            
+            <h3 id="info_h3_0"> WELCOME </h3>
+            
+            <div class="card">
+                <div class="MK">
+                    <h5> Must_ak_khan </h3>
+                </div>
+
+                <div>
+                    <h5> Score : </h5>
+                    <h2 id="info_h2_0"> 0 </h2>
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <div class="body">
+        
+            <div class="row">
+                <span onclick="pclick(1)"></span>
+                <span onclick="pclick(2)"></span>
+                <span onclick="pclick(3)"></span>
+                <span onclick="pclick(4)"></span>
+                <span onclick="pclick(5)"></span>
+            </div>
+        
+            <div class="row">
+                <span onclick="pclick(6)"></span>
+                <span onclick="pclick(7)"></span>
+                <span onclick="pclick(8)"></span>
+                <span onclick="pclick(9)"></span>
+                <span onclick="pclick(10)"></span>
+            </div>
+        
+            <div class="row">
+                <span onclick="pclick(11)"></span>
+                <span onclick="pclick(12)"></span>
+                <span onclick="pclick(13)"></span>
+                <span onclick="pclick(14)"></span>
+                <span onclick="pclick(15)"></span>
+            </div>
+        
+            <div class="row">
+                <span onclick="pclick(16)"></span>
+                <span onclick="pclick(17)"></span>
+                <span onclick="pclick(18)"></span>
+                <span onclick="pclick(19)"></span>
+                <span onclick="pclick(20)"></span>
+            </div>
+        
+            <div class="row">
+                <span onclick="pclick(21)"></span>
+                <span onclick="pclick(22)"></span>
+                <span onclick="pclick(23)"></span>
+                <span onclick="pclick(24)"></span>
+                <span onclick="pclick(25)"></span>
+            </div>
+        
+        </div>
+
+        <button onclick="Restart()">Restart</button>
+        
+    </body>
+    
+    <script>
+
+        var Span = document.getElementsByTagName("span");
+        var hading = document.getElementById("info_h3_0");
+        var score_hading = document.getElementById("info_h2_0");
+        var number = 1;
+        
+        const Start=()=>{
+            for(let i=0; i<25; i++)
+            if(Span[i].textContent == "") return false;;
+            return true;
+        }
+        
+        const Win=()=>{
+            var score = 0;
+            for(let i=0; i<25; i+=5){
+                if(Span[i].style.backgroundColor == Span[i+1].style.backgroundColor && 
+                Span[i+1].style.backgroundColor == Span[i+2].style.backgroundColor &&
+                Span[i+2].style.backgroundColor == Span[i+3].style.backgroundColor && 
+                Span[i+3].style.backgroundColor == Span[i+4].style.backgroundColor && 
+                Span[i].style.backgroundColor == "black")
+                score++;
+            }
+        
+            for(let i=0; i<5; i++){
+                if(Span[i].style.backgroundColor == Span[i+5].style.backgroundColor && 
+                Span[i+5].style.backgroundColor == Span[i+10].style.backgroundColor &&
+                Span[i+10].style.backgroundColor == Span[i+15].style.backgroundColor && 
+                Span[i+15].style.backgroundColor == Span[i+20].style.backgroundColor && 
+                Span[i].style.backgroundColor == "black")
+                score++;
+            }                          
+        
+            for(let i=6; i>2; i-=2){
+                if(Span[0*i].style.backgroundColor == Span[1*i].style.backgroundColor && 
+                Span[i*1].style.backgroundColor == Span[i*2].style.backgroundColor &&
+                Span[i*2].style.backgroundColor == Span[i*3].style.backgroundColor && 
+                Span[i*3].style.backgroundColor == Span[i*4].style.backgroundColor && 
+                Span[i*0].style.backgroundColor == "black")
+                score++;
+            }
+            
+            score_hading.textContent = score;
+            if(score == 5) hading.textContent = "BINGGO";
+        
+        }
+
+        const pclick=(x)=>{
+            hading.textContent = "WELCOME";
+            if(Span[x-1].textContent == ""){
+                Span[x-1].textContent = number;
+                number++;
+            }
+            else if(Start()){
+                Span[x-1].style.backgroundColor = "black";
+                Win();
+            }
+            else hading.textContent = "!!! Invalid position !!!";
+        }
+
+        var temp = 1;
+        const Restart=()=>{
+            for(let i=0; i<25; i++){
+                Span[i].style.transform = `rotateY(${temp*360}deg)`;
+                Span[i].style.backgroundColor = "rgb(134, 224, 0)";
+                score_hading.textContent = "0";
+                Span[i].textContent = "";
+            }
+            score = 0;
+            number = 1;
+            hading.textContent = "WELCOME";
+            temp++;
+        }
+        
+    </script>
+
+</html>

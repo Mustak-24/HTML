@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            width: 100%; height: 100%;
+            overflow: hidden; margin: 0%;
+        }
+        body,.flex{
+            display: flex; justify-content: center;
+            align-items: center; flex-direction: column;
+        }
+        .column{flex-direction: column;}
+
+        main{
+            display: flex; flex-direction: column;
+            align-items: center; position: sticky;
+            width: 300px; aspect-ratio: 1;
+            border-radius: 20px; overflow: hidden;
+            box-sizing: border-box;
+            /* animation: anime 2s infinite ease-out steps(1); */
+            animation: anime 2s ease-out ;
+
+            #info{
+                width: 100%; height: 60%;
+                display: flex; align-items: center;
+
+                div:nth-child(1){
+                    justify-content: flex-end;
+                    width: 50%; height: 100%;
+                    gap: 15px;
+
+                    span:nth-child(1){
+                        width: 90px; overflow: hidden;
+                        border-radius: 20px; 
+                        aspect-ratio: 1;
+                        border: transparent;
+
+                        img{
+                            width: 100px; aspect-ratio: 1;
+                            box-sizing: border-box;
+                            object-fit: cover;
+                            scale: 1.4;
+                        }
+                    }
+                    div{
+                        width: 100%; height: 30%;
+                        h4{color: white; margin: 0%;}
+                        span b{font-size: 30px;}
+                    }
+
+
+                }
+
+                div:nth-child(2){
+                    width: 50%; height: 100%;
+                    justify-content: flex-start;
+                    span:nth-child(1){
+                        width: 100px; aspect-ratio: 1;
+                        font-size: 60px; font-weight: 1000;
+                        position: sticky;
+                    }
+                    span:nth-child(1)::before{
+                        box-sizing: border-box;
+                        aspect-ratio: 1; width: 15px;
+                        position: absolute; content: '';
+                        border: 5px solid black;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        top: 20%; right: 5%;
+                    }
+                }
+            }
+
+
+            #forcast{
+                position: absolute; bottom: 10px;
+                width: 100%; height: 30%;
+                display: flex; align-items: center;
+                justify-content: space-evenly;
+
+                div{
+                    border: 1px solid white;
+                    width: 45px; height: 90px;
+                    border-radius: 20px;
+                    display: flex; flex-direction: column;
+                    overflow: hidden;
+                    background-color: rgba(255, 255, 255, 0.475);
+                    position: sticky; box-sizing: border-box;
+                    justify-content: space-between;
+
+                    span{
+                        display: flex; align-items: center;
+                        height: 25px;
+                        font-size: 10px;
+                    }
+
+                    span:nth-child(2){
+                        width: 40px; 
+                        height: 40px;
+
+                        img{
+                            object-fit: cover;
+                            width: 40px; height: 40px;
+                        }
+                    }
+                }
+
+            }
+        }
+        main::before{
+            z-index: -1;
+            content: ''; position: absolute;
+            width: 100%; aspect-ratio: 1;
+            background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0.689),rgba(255, 255, 255, 0.393),rgba(0, 0, 0, 0.311)),
+            url("https://img.freepik.com/free-photo/white-clouds-blue-background_23-2148964575.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+
+        @keyframes anime{
+            0%{transform: scale(0); opacity: 0;}
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div id="info">
+            <div class="flex">
+                <span class="flex">
+                    <img src="https://i.pinimg.com/736x/a6/f8/6e/a6f86e947065a03cc0fde7b2e9805f4d.jpg">
+                </span>
+                <div class="flex">
+                    <h4>Weather</h4>
+                    <span>
+                        <b style="color: rgb(255, 123, 0); margin-right: 20px;">17</b>
+                        <b style="color: rgb(0, 98, 255);">4</b>
+                    </span>
+                </div>
+            </div>
+            <div class="flex">
+                <span class="flex">24</span>
+                <span>Location</span>
+            </div>
+        </div>
+        <div id="forcast">
+            <div class="flex">
+                <span>Now</span>
+                <span>
+                    <img src="cloudy.png">
+                </span>
+                <span>13</span>
+            </div>
+            <div class="flex">
+                <span>Next</span>
+                <span>
+                    <img src="sun.png">
+                </span>
+                <span>14</span>
+            </div>
+            <div class="flex">
+                <span>Next+</span>
+                <span>
+                    <img src="storm.png">
+                </span>
+                <span>12</span>
+            </div>
+            <div class="flex">
+                <span>Next++</span>
+                <span>
+                    <img src="snow.png">
+                </span>
+                <span>8</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
